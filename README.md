@@ -1,2 +1,1 @@
-# -IPC2-Practica2_201800665
-Practica 2
+Programa tipo agenda, el cúal almacenará la información con listas doblemente enlasadas

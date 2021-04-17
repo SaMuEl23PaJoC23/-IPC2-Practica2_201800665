@@ -19,14 +19,36 @@ class Lista_Doble_Enlazada():
             NodoNuevo.setAnterior(self.ultimo)
             self.ultimo=NodoNuevo
     
-    def Recorrer(self):
+    def Buscar(self, telefono):
+        Existente=False
         if not self.vacio():
             tmp=self.primero
             while tmp != None:
-                print("-------------------------")
-                print("Nombre:",tmp.getNombre())
-                print("Apellido:",tmp.getApellido())
-                print("telefono:",tmp.getTelefono())
-                tmp=tmp.getSiguiente()
+                if telefono == tmp.getTelefono():
+                    print("---------CONTACTO------------")
+                    print("Nombre:",tmp.getNombre())
+                    print("Apellido:",tmp.getApellido())
+                    Existente=True
+                    break
+                else:
+                    tmp=tmp.getSiguiente()
         else:
             print("Lista Vacía...")
+        return Existente
+
+   
+
+    def BuscarExistente(self, telefono):
+        Existente=False
+
+        if not self.vacio():
+            tmp=self.primero
+            while tmp != None:
+                if telefono == tmp.getTelefono():
+                    Existente=True
+                    break
+                else:
+                    tmp=tmp.getSiguiente()
+                
+
+        return Existente
